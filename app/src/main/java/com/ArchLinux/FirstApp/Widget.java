@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import static com.ArchLinux.FirstApp.MainActivity.fts;
+
 
 public class Widget extends AppWidgetProvider {
 
@@ -41,10 +43,7 @@ public class Widget extends AppWidgetProvider {
         String action=intent.getAction();
         Log.d("#",action);
         if(action.equals(button_clicked)){
-            try {
-                Process process = Runtime.getRuntime().exec("am force-stop com.kako.talk");
-                Log.d("#","success");
-            }catch (Exception e){e.printStackTrace();}
+            fts.forceToStop();
         }
 
 
