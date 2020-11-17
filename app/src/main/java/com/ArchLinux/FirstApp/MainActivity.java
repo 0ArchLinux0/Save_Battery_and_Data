@@ -11,34 +11,59 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mButton;
+    private Button button_kill_kakaotalk;
+    private Button button_kill_instagram;
+    private Button button_kill_facebook;
+    private Button button_kill_chrome;
+    private Button button_kill_all;
     private Context context;
     static ForceToStop fts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mButton=findViewById(R.id.buttonId);
+        button_kill_kakaotalk=findViewById(R.id.button_kill_kakaotalk);
+        button_kill_instagram=findViewById(R.id.button_kill_instagram);
+        button_kill_facebook=findViewById(R.id.button_kill_facebook);
+        button_kill_chrome=findViewById(R.id.button_kill_chrome);
+        button_kill_all=findViewById(R.id.button_kill_all);
+
         context=getApplicationContext();
         fts=new ForceToStop(context);
-        mButton.setOnClickListener(new View.OnClickListener() {
+
+        button_kill_kakaotalk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*  ActivityManager am=(ActivityManager)getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
-                am.killBackgroundProcesses("com.kakao.talk");*/
+                fts.forceToStop_kakao();
 
-                fts.forceToStop();
-               /* Process.killProcess( APP-PROCESS-ID )import android.os.Process
+            }
+        });
 
-    ActivityManager am = (ActivityManager)
-    getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
-    am.killBackgroundProcesses("app-package-name");
-                */  //Killing process can't prevent service from reviving.
+        button_kill_instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fts.forceToStop_instagram();
+            }
+        });
 
-            /*    try {
-                   Runtime.getRuntime().exec("am force-stop com.kakao.talk");
-                    Log.d("#","success");
-                }catch (Exception e){e.printStackTrace();}*/
+        button_kill_facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fts.forceToStop_facebook();
+            }
+        });
+
+        button_kill_chrome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fts.forceToStop_chrome();
+            }
+        });
+
+        button_kill_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fts.forceToStop_all();
             }
         });
     }

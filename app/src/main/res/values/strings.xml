@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">FirstApp</string>
     <string name="textviewtext">First app</string>
-    <string name="buttontext">Kill KAKOTALK</string>
-    <string name="widgettext">Widget Button</string>
+
+    <string name="button_kill_kakaotalk">Kill KAKOTALK</string>
+    <string name="button_kill_instagram">Kill INSTAGRAM</string>
+    <string name="button_kill_facebook">Kill FACEBOOK</string>
+    <string name="button_kill_chrome">Kill CHROME</string>
+    <string name="button_kill_media">Kill MEDIA\n(Gallery,Music,Video,Camera)</string>
+    <string name="button_kill_all">Kill All</string>
+
+    <string name="b_kill_kakotalk">Kakaotalk</string>
+    <string name="b_kill_instagram">Instagram</string>
+    <string name="b_kill_facebook">Facebook</string>
+    <string name="b_kill_chrome">CHROME</string>
+    <string name="b_kill_media">MEDIA</string>
+    <string name="b_kill_all">Kill All</string>
 </resources>
